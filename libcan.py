@@ -1,17 +1,9 @@
-impor://github.com/awearness/clt15-infoscreent socket
+import socket
 import struct
-
-class bcm_timeval:
-	int tv_sec #long
-	int tv_usec #long
-
-class bcm_msg_head:
 
 
 
 class can:
-# CAN frame packing/unpacking (see 'struct can_frame' in <linux/can.h>)
-
 	def __init__(self, interface):
 		self._can_frame_fmt = "=IB3x8s"
 		self._can_frame_size = struct.calcsize(can_frame_fmt)
@@ -22,7 +14,7 @@ class can:
 
 
 	def __del__(self):
-		print('TBD')
+		pass
 
 	def _build_can_frame(self, can_id, data):
 		dlc = len(data)
